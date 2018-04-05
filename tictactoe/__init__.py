@@ -1,3 +1,6 @@
+from copy import copy
+from random import sample
+
 class tictactoeboard:
     """Current board stored as a dictionary with the following keys:
 
@@ -56,13 +59,12 @@ class tictactoeboard:
             raise ValueError('Piece already at that position')
         
         self.board[position] = self.current_move
-        self.history.append(self.board)
+        self.history.append(copy(self.board))
         if self.is_win():
             self.outcome = self.current_move + ' ' + 'win'
         elif not self.are_moves_left():
             self.outcome = 'Draw'
-        else:
-            self.switch_sides()
+        self.switch_sides()
     
     def available_moves(self):
         return [k for (k,v) in self.board.items() if v == ' ']
@@ -102,7 +104,7 @@ class tictactoeboard:
            self.board['13'] == self.board['33']:
             return True
         
-        # Row win conditions
+        # Diagonal win conditions
         if self.board['11'] != ' ' and \
            self.board['11'] == self.board['22'] and \
            self.board['11'] == self.board['33']:
@@ -126,8 +128,7 @@ class tictactoeboard:
 def play_game():
     return tictactoeboard()
 
-import random
 def bot_random(self):
     possible_moves = self.available_moves()
-    random_move = [ possible_moves[i] for i in sorted(random.sample(range(len(possible_moves)), 1)) ][0]
+    random_move = [ possible_moves[i] for i in sorted(sample(range(len(possible_moves)), 1)) ][0]
     self.move(random_move)
