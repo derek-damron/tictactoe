@@ -1,3 +1,3 @@
 from .play_game import *
-from .bot_random import *
-from .bot_intermediate import *
+from .bot_easy import *
+from .bot_medium import *
