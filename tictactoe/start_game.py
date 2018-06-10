@@ -1,4 +1,4 @@
 from .tictactoeboard import *
 
-def play_game():
+def start_game():
     return tictactoeboard()

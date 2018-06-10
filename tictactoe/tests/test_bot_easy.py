@@ -3,7 +3,7 @@ from tictactoe import *
 
 @pytest.fixture()
 def g_bot_easy():
-    g = play_game()
+    g = start_game()
     bot_easy(g)
     return g
 

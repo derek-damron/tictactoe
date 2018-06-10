@@ -9,7 +9,7 @@ from tictactoe import *
 
 @pytest.fixture()
 def g0():
-    g = play_game()
+    g = start_game()
     return g
 
 class Test_initial_values(object):
@@ -66,7 +66,7 @@ def test_error_invalid_position(g0):
 
 @pytest.fixture()
 def g1():
-    g = play_game()
+    g = start_game()
     g.move('22')
     return g
 
@@ -129,7 +129,7 @@ def test_error_piece_already_there(g1):
 
 @pytest.fixture()
 def g2():
-    g = play_game()
+    g = start_game()
     g.move('22')
     g.move('11')
     return g
@@ -197,7 +197,7 @@ class Test_second_move(object):
 
 @pytest.fixture()
 def g3():
-    g = play_game()
+    g = start_game()
     g.move('11')
     g.move('21')
     g.move('12')
