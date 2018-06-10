@@ -20,16 +20,13 @@ def bot_medium(game):
             return
         
     # If no winning moves on the board, make any blocking moves
-    blocking_moves = []
     for m in possible_moves:
         game_copy = deepcopy(game)
         game_copy.switch_sides()
         game_copy.move(m)
         if game_copy.is_win():
-            blocking_moves += [m]
-    if len(blocking_moves) > 0:
-        game.move(blocking_moves[0])
-        return
+            game.move(m)
+            return            
         
     # Else make a random move
     bot_easy(game)
