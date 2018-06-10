@@ -9,7 +9,7 @@ from tictactoe import *
 
 @pytest.fixture()
 def g_draw():
-    g = play_game()
+    g = start_game()
     g.move('11')
     g.move('12')
     g.move('13')
@@ -47,7 +47,7 @@ class Test_draw(object):
 
 @pytest.fixture()
 def g_row_1_win():
-    g = play_game()
+    g = start_game()
     g.move('11')
     g.move('21')
     g.move('12')
@@ -64,7 +64,7 @@ class Test_row_1_win(object):
 
 @pytest.fixture()
 def g_row_2_win():
-    g = play_game()
+    g = start_game()
     g.move('11')
     g.move('21')
     g.move('12')
@@ -82,7 +82,7 @@ class Test_row_2_win(object):
 
 @pytest.fixture()
 def g_row_3_win():
-    g = play_game()
+    g = start_game()
     g.move('31')
     g.move('21')
     g.move('32')
@@ -99,7 +99,7 @@ class Test_row_3_win(object):
 
 @pytest.fixture()
 def g_col_1_win():
-    g = play_game()
+    g = start_game()
     g.move('11')
     g.move('12')
     g.move('21')
@@ -116,7 +116,7 @@ class Test_col_1_win(object):
 
 @pytest.fixture()
 def g_col_2_win():
-    g = play_game()
+    g = start_game()
     g.move('11')
     g.move('12')
     g.move('21')
@@ -134,7 +134,7 @@ class Test_col_2_win(object):
 
 @pytest.fixture()
 def g_col_3_win():
-    g = play_game()
+    g = start_game()
     g.move('13')
     g.move('12')
     g.move('23')
@@ -151,7 +151,7 @@ class Test_col_3_win(object):
 
 @pytest.fixture()
 def g_diag_upper_left_win():
-    g = play_game()
+    g = start_game()
     g.move('11')
     g.move('12')
     g.move('22')
@@ -168,7 +168,7 @@ class Test_diag_upper_left_win(object):
 
 @pytest.fixture()
 def g_diag_upper_right_win():
-    g = play_game()
+    g = start_game()
     g.move('11')
     g.move('13')
     g.move('21')

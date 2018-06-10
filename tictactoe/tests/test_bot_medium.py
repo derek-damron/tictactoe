@@ -9,7 +9,7 @@ from tictactoe import *
 
 @pytest.fixture()
 def g_bot_medium():
-    g = play_game()
+    g = start_game()
     bot_medium(g)
     return g
 
@@ -45,7 +45,7 @@ class Test_bot_medium(object):
 
 def test_error_no_moves():
     with pytest.raises(ValueError) as excinfo:
-        g = play_game()
+        g = start_game()
         g.move("11")
         g.move("12")
         g.move("13")
@@ -66,7 +66,7 @@ def test_error_no_moves():
 
 @pytest.fixture()
 def g_bot_medium_1move():
-    g = play_game()
+    g = start_game()
     g.move("11")
     g.move("12")
     g.move("13")
@@ -110,7 +110,7 @@ class Test_bot_medium_1move(object):
 
 @pytest.fixture()
 def g_bot_medium_1win():
-    g = play_game()
+    g = start_game()
     g.move("11")
     g.move("21")
     g.move("12")
@@ -145,7 +145,7 @@ class Test_bot_medium_1win(object):
 
 @pytest.fixture()
 def g_bot_medium_2wins():
-    g = play_game()
+    g = start_game()
     g.move("22")
     g.move("21")
     g.move("11")
@@ -187,7 +187,7 @@ class Test_bot_medium_2wins(object):
 
 @pytest.fixture()
 def g_bot_medium_winblock():
-    g = play_game()
+    g = start_game()
     g.move("11")
     g.move("21")
     g.move("12")
@@ -227,7 +227,7 @@ class Test_bot_medium_winblock(object):
 
 @pytest.fixture()
 def g_bot_medium_block():
-    g = play_game()
+    g = start_game()
     g.move("11")
     g.move("21")
     g.move("31")
